@@ -1,0 +1,68 @@
+* {
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	font-family: 'Roboto', serif;
+}
+
+#title {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+#title h1 {
+	color: green;
+}
+
+#map {
+	width: 100%;
+	height: 500px;
+	margin: 0 auto;
+}
+
+#regionInfo {
+	width: 500px;
+	text-align: center;
+	font-size: 25px;
+	margin: 0 auto;
+}
+
+button {
+	padding: 5px;
+	border-radius: 5px;
+	color: white;	
+	background-color: green;
+	border: 3px solid white;
+}
+
+button:hover {
+	color: green;
+	background-color: white;
+	border: 3px solid green;
+}
+
+#record {
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 20px;
+	border: 3px solid green;
+}
+
+#microphone {
+	width: 100%;
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#done {
+	margin: 0 auto;
+}
