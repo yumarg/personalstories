@@ -25,13 +25,30 @@ body {
 	width: 100%;
 	height: 500px;
 	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#imageMap {
+	margin: 0 auto;
+	display: inline-block;
+	float: left;
+}
+
+#imageMap img {
+	display: block;
+	width: 500px;
+	text-align: center;
+	margin: auto;
 }
 
 #regionInfo {
+	display: inline-block;
+	float: right;
 	width: 500px;
 	text-align: center;
 	font-size: 25px;
-	margin: 0 auto;
+	margin: auto;
+	margin-top: 30px;
 }
 
 button {
@@ -65,4 +82,8 @@ button:hover {
 
 #done {
 	margin: 0 auto;
+}
+
+#response p {
+	margin-top: 20px;
 }
