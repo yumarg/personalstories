@@ -28,6 +28,12 @@ body {
 	margin-top: 20px;
 }
 
+#video {
+	width: 800px;
+	margin: 0 auto;
+	cursor: default;
+}
+
 #imageMap {
 	margin: 0 auto;
 	display: inline-block;

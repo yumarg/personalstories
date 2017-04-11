@@ -38,6 +38,17 @@ $(document).ready(function() {
 				//r: Roslindale
 				getInfo(8);
 				break;
+			case 80:
+				//p: play IntroVideo
+				if (document.getElementById("introVid") != null) {
+					document.getElementById("introVid").load();
+					document.getElementById("introVid").play();
+				}
+				break;
+			case 71:
+				//g: show general map
+				showGeneralMap();
+				break;
 			default:
 				e.preventDefault();
 				break;
@@ -59,23 +70,32 @@ var regions = {
 
 function getInfo(region) {
 	playAudio(region);
-	showMap(region);
+	showSpecificMap(region);
 }
 
 function playAudio(region) {
 	$("#audioClip").remove();
 	var audioElement = "<audio id='audioClip'><source src='audio/"+regions[region].name + regions[region].clips[regions[region].count] + ".m4a' type='audio/mpeg'></audio>";
 	$("body").append(audioElement);
-	document.getElementById("audioClip").play();	
+	document.getElementById("audioClip").play();
 	regions[region].count  = (regions[region].count + 1) % regions[region].clips.length;
 }
 
-function showMap(region) {
+function showSpecificMap(region) {
 	$("#imageMap").remove();	
 	$("#regionInfo").remove();	
 	var imageElement = "<div id='imageMap'><img src='images/" + regions[region].map + ".png'></div>";
 	$("#map").append(imageElement);	
 	$("#map").append("<div id='regionInfo'><p><span style='color: green'>" + regions[region].name + "</span> currently has <span style='color: green'>" + regions[region].clips.length + "</span> questions about sustainability and climate change.</p><button id='submit' class='button' onclick='submitQuestion(" + region + ")'>Submit your own question!</button></div>");
+}
+
+function showGeneralMap(region) {
+	$("#introVid").remove();
+	$("#imageMap").remove();	
+	$("#regionInfo").remove();	
+	var imageElement = "<div id='imageMap'><img src='images/All.png'></div>";
+	$("#map").append(imageElement);	
+	$("#map").append("<div id='regionInfo'><p>Click a region in Boston to explore questions about <strong>sustainability</strong> and <strong>climate change</strong>.</p></div>");	
 }
 
 function submitQuestion(region) {
